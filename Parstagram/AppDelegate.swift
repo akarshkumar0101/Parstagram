@@ -25,6 +25,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             })
         )
         
+        if(PFUser.current() != nil){
+            let mainStoryboard = UIStoryboard(name: "Main", bundle: nil)
+            let homeFeedViewController = mainStoryboard.instantiateViewController(withIdentifier: "HomeFeedViewController")
+            window?.rootViewController = homeFeedViewController
+        }
+        
         return true
     }
 
